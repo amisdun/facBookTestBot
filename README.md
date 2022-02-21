@@ -3,6 +3,11 @@
 ## Project setup
 
 ```
+You must setup your facebook webhooks and get your token after setting up your facebook page, see https://developers.facebook.com/apps/
+
+```
+
+```
 Clone the repo
 cd backend  and run npm install OR yarn install
 Create a .env file in the root of backend path /facBookTestBot/.env
