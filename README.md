@@ -30,7 +30,7 @@ cd facBookTestBot and npm run dev OR yarn run dev
 
  1. Open your web browser and type http://localhost:8081/ to see the application
 
-```
-
-You can view gif image of the working project below
+ You can view gif image of the working project below
 ![](https://github.com/amisdun/faceBookBotGIF/blob/master/faceBookBotTest.gif)
+
+```
