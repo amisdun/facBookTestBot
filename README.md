@@ -5,12 +5,16 @@
 ```
 You must setup your facebook webhooks and get your token after setting up your facebook page, see https://developers.facebook.com/apps/
 
+NB: You use an Ngrok to expose your local server to be able to configure your callback url on facebook app settings
+
 ```
 
 ```
 Clone the repo
-cd backend  and run npm install OR yarn install
-Create a .env file in the root of backend path /facBookTestBot/.env
+cd facBookTestBot and run npm install OR yarn install
+
+Create a .env file in the root of facBookTestBot path /facBookTestBot/.env
+
 In the .env file you will need the following variables in other to run the project
 PORT
 MONGODB_URI
