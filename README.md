@@ -33,4 +33,4 @@ cd facBookTestBot and npm run dev OR yarn run dev
 ```
 
 You can view gif image of the working project below
-![](https://drive.google.com/file/d/1wm5dLYxgTfvzyvYHFShoEtc8lhDWKudn/view)
+![](facebookBot.gif)
