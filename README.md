@@ -29,8 +29,10 @@ Run the following commands to start the up
 cd facBookTestBot and npm run dev OR yarn run dev
 
  1. Open your web browser and type http://localhost:8081/ to see the application
+ 2. You can also find link to the deployed app on heroku
 
  You can view gif image of the working project below
 ```
+
 
 ![](https://github.com/amisdun/faceBookBotGIF/blob/master/faceBookBotTest.gif)
