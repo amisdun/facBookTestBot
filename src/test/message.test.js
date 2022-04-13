@@ -7,11 +7,13 @@ import { differenceInCalendarDays, parseISO, setYear, getYear } from "date-fns";
 import { handleWebHookEvent } from "../services/index.js";
 import requestApi from "supertest";
 import app from "../server.js";
+import { config } from "dotenv";
+config();
 
 describe("Facebook Test Bot", () => {
   const senderId = new UUID();
   beforeAll(async () => {
-    await mongoose.connect("mongodb://127.0.0.1:27017/test");
+    await mongoose.connect(process.env.MONGODB_URI_TEST);
   });
 
   afterEach(function () {
