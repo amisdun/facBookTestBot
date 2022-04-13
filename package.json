@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon ./bin/www.js",
-    "start": "pm2 start -f ./bin/www.js",
+    "start": "cross-env NODE_ENV=development nodemon ./bin/www.js",
+    "dev": "pm2 start -f ./bin/www.js",
     "list:server": "pm2 list",
     "stop": "pm2 stop ./bin/www.js",
     "delete:server": "pm2 delete all",
