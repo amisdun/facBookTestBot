@@ -7,7 +7,7 @@ const mongoRules = {
     instance: {
       dbName: "jest",
     },
-    autoStart: true,
+    autoStart: false,
   },
 };
 
