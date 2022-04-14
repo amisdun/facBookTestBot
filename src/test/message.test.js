@@ -222,11 +222,14 @@ describe("Facebook Test Bot", () => {
 
   it("should fetch all messages", async () => {
     const response = await requestApi(app).get("/messages");
+    expect(response.body.data.length).toBe(5);
     expect(response.status).toBe(200);
   });
 
   it("should fetch all summary", async () => {
     const response = await requestApi(app).get("/summary");
+    expect(response.body.data.length).toBe(1);
+    expect(response.body.data[0].messages.length).toBe(5);
     expect(response.status).toBe(200);
   });
 
@@ -235,10 +238,14 @@ describe("Facebook Test Bot", () => {
     const response = await requestApi(app).get(
       `/messages/${message._id.toHexString()}`
     );
+    expect(response.body.data._id).toBe(message._id.toHexString());
+    expect(response.body.data.message).toBe("This is a test message");
     expect(response.status).toBe(200);
   });
 
   afterAll(async () => {
+    await Message.deleteMany();
+    await User.deleteMany();
     await mongoose.connection.close();
   });
 }, 10000);
