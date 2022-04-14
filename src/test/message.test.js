@@ -21,7 +21,7 @@ describe("Facebook Test Bot", () => {
   });
 
   it("Should return 'What is your First Name' if 'message.text === hi'", async () => {
-    const user = new User({ user: senderId });
+    const user = new User({ user: senderId.toHexString() });
     const newMessage = await Message.create({ message: "hi" });
     user.messages.push(newMessage);
     await user.save();
@@ -56,7 +56,7 @@ describe("Facebook Test Bot", () => {
   it("Should return 'What is your date of birth? Please Provide in this format YYYY-MM-DD' if 'message.text is not of type date'", async () => {
     const newMessage = await Message.create({ message: "mikel" });
     const userFound = await User.findOneAndUpdate(
-      { user: senderId },
+      { user: senderId.toHexString() },
       { userName: "mikel", $push: { messages: [newMessage?._id] } },
       { new: true }
     );
@@ -95,7 +95,7 @@ describe("Facebook Test Bot", () => {
   it("Should return 'Do you want to know how many days to your birthday?' if 'message.text is of type date'", async () => {
     const newMessage = await Message.create({ message: "1997-02-25" });
     const userFound = await User.findOneAndUpdate(
-      { user: senderId },
+      { user: senderId.toHexString() },
       {
         dateOfBirth: parseISO("1997-02-25"),
         $push: { messages: [newMessage?._id] },
@@ -137,7 +137,7 @@ describe("Facebook Test Bot", () => {
   it("Should return 'Days to your birthday?' if 'responded with yes'", async () => {
     const newMessage = await Message.create({ message: "yes" });
     const userFound = await User.findOneAndUpdate(
-      { user: senderId },
+      { user: senderId.toHexString() },
       {
         $push: { messages: [newMessage?._id] },
       },
@@ -180,14 +180,11 @@ describe("Facebook Test Bot", () => {
       )} days left until your next birthday`
     );
   });
-  afterAll(async () => {
-    await mongoose.connection.close();
-  });
 
-  it("Should return 'Days to your birthday?' if 'responded with no'", async () => {
+  it("Should return 'Goodbye!!!' if 'responded with no'", async () => {
     const newMessage = await Message.create({ message: "no" });
     const userFound = await User.findOneAndUpdate(
-      { user: senderId },
+      { user: senderId.toHexString() },
       {
         $push: { messages: [newMessage?._id] },
       },
