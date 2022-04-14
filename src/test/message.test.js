@@ -248,4 +248,4 @@ describe("Facebook Test Bot", () => {
     await User.deleteMany();
     await mongoose.connection.close();
   });
-}, 10000);
+});
